@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
         .addField("Bot Latency", `${message.createdTimestamp - message.createdTimestamp}ms`, true)
         .addField("API Latency", `${Math.round(client.ws.ping)}ms`, true)
         .setTimestamp()
-        .setFooter(`© 2021 Clemens`);
+        .setFooter(`© 2022 Clemens`);
     await message.channel.send(embed);
 };
 
