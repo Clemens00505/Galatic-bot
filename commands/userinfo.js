@@ -1,7 +1,12 @@
 const discord = require("discord.js");
 const moment = require("moment");
 
-module.exports.run = async(bot, message, args) => {
+module.exports = {
+    name: "userinfo",
+    category: "info",
+
+
+run: async(bot, message, args) => {
 
     var member = message.guild.member(message.mentions.users.first() || client.users.cache.get(args[0]));
     if(!member) member = message.member;
@@ -16,7 +21,7 @@ module.exports.run = async(bot, message, args) => {
     if(nickName == null || undefined) nickName = "Geen";
 
     var embed = new discord.MessageEmbed()
-        .setColor("#00ff00")
+        .setColor("#ff2050")
         .setThumbnail(member.user.displayAvatarURL({size: 4096}))
         .setTitle(`${member.user.tag}`)
         .addField("ID:", `${member.id}`, true)
@@ -31,10 +36,6 @@ module.exports.run = async(bot, message, args) => {
         .addField(`Rollen [ ${roles}]`, `${roleNames}`);
 
     message.channel.send(embed);
+    }
+};
 
-}
-    
-
-module.exports.help = {
-    name: "userinfo"
-}
