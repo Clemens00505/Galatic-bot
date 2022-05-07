@@ -9,6 +9,7 @@
   "author": "Clemens",
   "dependencies": {
     "ascii-table": "^0.0.9",
+    "beautify": "^0.0.8",
     "better-sqlite3": "^7.0.1",
     "common-tags": "^1.8.2",
     "discord.js": "^12.3.1",
