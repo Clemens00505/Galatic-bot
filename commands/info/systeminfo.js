@@ -7,7 +7,7 @@ const { re } = require('mathjs');
 module.exports = {
     name: "systeminfo",
     aliases: ["systemstats", "system", "systeminformation"],
-    category: "Info",
+    category: "info",
     description: "Gives my system information",
     example: `${config.Prefix}systeminfo`,
 
