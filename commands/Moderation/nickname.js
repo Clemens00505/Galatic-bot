@@ -5,7 +5,7 @@ module.exports = {
   name: "nickname",
   aliases: ["setnickname", "nick"],
   description: "Sets a nickname for the mentioned user or provided ID from this guild",
-  usage: `${config.Prefix}nickname @Clemens Voorbeeld`,
+  usage: `${config.prefix}nickname @Clemens Voorbeeld`,
   category: "Moderation",
 
    run: async (client, message, args) => {
@@ -24,7 +24,7 @@ module.exports = {
     return message.reply(`❌ I do not have permission to ban users pls enable permission **\`MANAGE_NICKNAMES\`** for me`);
 
     if(!user)
-    return message.reply(`❌ Please mention or provide the ID of the user from this guild !! **\`${config.Prefix}nickname [Mention or ID] [The Nickname]\`**`)
+    return message.reply(`❌ Please mention or provide the ID of the user from this guild !! **\`${config.prefix}nickname [Mention or ID] [The Nickname]\`**`)
 
     if (!args[1]) 
     return message.reply(`❌ Please provide a nickname !!`);

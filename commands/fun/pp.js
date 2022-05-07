@@ -35,7 +35,7 @@ module.exports = {
     aliases: ['ppsize', 'penis'],
     category: 'Fun',
     description: 'gives the pp size of the mentioned user or provided ID',
-    example: `${config.Prefix}pp @Dinav`,
+    example: `${config.prefix}pp @Dinav`,
     
     run: async (client, message, args) => {
 
