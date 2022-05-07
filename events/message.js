@@ -1,17 +1,39 @@
+const Discord = require('discord.js');
+const config = require('../config.json');
 
-const { prefix } = require('../config.json');
+module.exports = async (client, message) => {
+    
+    if (message.author.bot || !message.guild || message.webhookID || message.channel.type === 'dm') return;
 
-module.exports = (client, message) => {
+    if (message.content === `<@${client.user.id}>` || message.content === `<@!${client.user.id}>`) {
 
-    if (message.author.bot) return;
-    if (message.content.indexOf(prefix) !== 0) return;
+    const embed = new Discord.MessageEmbed()
+    .setTitle('Did you ping me ??')
+    .setThumbnail(client.user.displayAvatarURL({dynamic: true, size: 1024}))
+    .setDescription(`Aight I'm ${client.user.username} I'm a multi purpose bot my prefix is \`${config.prefix}\` try \`${config.prefix}help\` to get the list of all my commands.\n\n`)
+    .setTimestamp()
+    
+    message.channel.send(embed)
+    
+    }
+
+    const prefix = config.prefix;
+  
+    if (!message.content.toLowerCase().startsWith(prefix)) return;
+
+    if (!message.member) message.member = await message.guild.fetchMember(message);
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
-    const command = args.shift().toLowerCase();
+    const cmd = args.shift().toLowerCase();
+    
+    if (cmd.length === 0) return;
+    
+    let command = client.commands.get(cmd);
+   
+    if (!command) command = client.commands.get(client.aliases.get(cmd));
+   
+    if (command) 
+    
+    command.run(client, message, args);
 
-    const cmd = client.commands.get(command);
-    if (!cmd) return;
-
-    cmd.run(client, message, args, command);
-
-};
+}
