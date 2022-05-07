@@ -1,23 +1,14 @@
+const config = require('../config.json');
 
-const config = require("../config.json");
-
-module.exports = (client) => {
-    console.log(`Logged in as ${client.user.tag}!`);
-
-    client.user.setActivity(`Some Games | ${config.version}`, {
-        type: "PLAYING"
-    });
-
-    //client.user.setActivity(`Some Netflix`, {
-    //    type: "WATCHING"
-    //});
-
-    //client.user.setActivity(`To some music`, {
-    //    type: "LISTENING"
-    //});
-
-    //client.user.setActivity(`To some music`, {
-    //    type: "STREAMING",
-    //    url: "-"    // You have to use a Twitch link or else it won't work.
-    //});
-};
+module.exports = async (client) => {
+        
+    let usersCount = 0;
+    for (const guild of client.guilds.cache) {
+    usersCount += (await guild[1].members.fetch()).size
+    }
+        
+    process.on('unhandledRejection', err => console.log(err))
+    client.user.setActivity(`${config.prefix}help | ${client.guilds.cache.size} Servers`, {type: "LISTENING"}, {status: "dnd"})
+    await console.log(`${client.user.tag} is now connected to Discord !! Cached ${usersCount} Users`)
+    
+}

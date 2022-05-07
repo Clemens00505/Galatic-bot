@@ -14,8 +14,4 @@ client.snipes = new Discord.Collection();
   require(`./Handlers/${handler}`)(client);
 });
 
-process.on("unhandledRejection", (error) => {
-  console.error("Unhandled promise rejection:", error);
-});
-
-client.login(config.token || process.env.TOKEN);
+client.login(config.token);
