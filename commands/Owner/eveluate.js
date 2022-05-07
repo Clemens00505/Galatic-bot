@@ -25,7 +25,7 @@ module.exports = {
             const evaluated = eval(toEval); 
 
             let embed = new Discord.MessageEmbed()
-            .setColor("#00FF00")
+            .setColor("#ff2050")
             .setTimestamp()
             .setFooter(client.user.username)
             .setTitle("Eval")

@@ -13,7 +13,7 @@ module.exports = {
     if (res.status === 404) return message.channel.send('No search results found, maybe try searching for something that exists.');
     const body = await res.json();
     const embed = new MessageEmbed()
-        .setColor(0xde2c2c)
+    .setColor("#ff2050")
         .setTitle(body.name)
         .setURL(`https://www.npmjs.com/package/${body.name}`)
         .setDescription(body.description || 'No description.')
