@@ -5,11 +5,11 @@ module.exports = {
     aliases: ["purge", "nuke", "clean"],
     category: "Moderation",
     description: "Clears the chat",
-    example: `${config.Prefix}clear 69`,
+    example: `${config.prefix}clear 69`,
     
     run: async (client, message, args) => {
 
-        const perms = ["MANAGE_MESSAGES" || "ADMINSTRATOR"]
+        const perms = ["MANAGE_MESSAGES" || "ADMINISTRATOR"]
 
         if (message.deletable) {
             message.delete();

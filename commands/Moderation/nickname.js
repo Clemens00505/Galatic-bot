@@ -10,7 +10,7 @@ module.exports = {
 
    run: async (client, message, args) => {
     const user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
-    const perms = ["MANAGE_NICKNAMES" || "ADMINSTRATOR"];
+    const perms = ["MANAGE_NICKNAMES" || "ADMINISTRATOR"];
     const galatic = message.guild.members.cache.get(client.user.id);
     let nickname = args[1];
 
