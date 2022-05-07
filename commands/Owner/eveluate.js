@@ -5,7 +5,7 @@ const beautify = require('beautify');
 module.exports = {
     name: "eval", 
     aliases: ["e", "evaluate"],
-    category: "Developer",
+    category: "Owner",
     description: "Evaluates the code you put in but it's only available for the my Developer and no one else!!!!!",
     example: `${config.prefix}eval [js string]`,
 
