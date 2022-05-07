@@ -9,7 +9,7 @@ module.exports = {
     aliases: ["systemstats", "system", "systeminformation"],
     category: "info",
     description: "Gives my system information",
-    example: `${config.Prefix}systeminfo`,
+    usage: `${config.Prefix}systeminfo`,
 
     run: async(client, message, args) => {
 
