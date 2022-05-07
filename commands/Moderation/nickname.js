@@ -3,7 +3,7 @@ const config = require('../../config.json');
 
 module.exports = {
   name: "nickname",
-  aliases: ["setnickname", "nick"],
+  aliases: ["setnickname", "nick", "nm"],
   description: "Sets a nickname for the mentioned user or provided ID from this guild",
   usage: `${config.prefix}nickname @Clemens Voorbeeld`,
   category: "Moderation",

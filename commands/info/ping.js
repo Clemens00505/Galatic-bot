@@ -5,6 +5,7 @@ module.exports = {
     description: "Get list of all command and even get to know every command detials",
     usage: "ping",
     category: "info",
+    aliases: ["p", "latency"],
 
 run: async (client, message, args) => {
     if (message.author.bot) return;
