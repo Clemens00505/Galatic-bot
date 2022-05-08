@@ -6,7 +6,7 @@ module.exports = {
   aliases: ["tell", "embed"],
   category: "Moderation",
   description: "Send message with bot in embed",
-  example: `${config.prefix}say [message]`,
+  usage: `${config.prefix}say [message]`,
 
   run: async (client, message, args) => {
 

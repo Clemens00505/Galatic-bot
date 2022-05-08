@@ -8,7 +8,7 @@ module.exports = {
     aliases: ['sps'],
     category: "Fun",
     description: "Plays rock paper scissor with Galatic !!",
-    example: `${config.prefix}!!rps rock`,
+    usage: `${config.prefix}!!rps rock`,
 
     run: async (client, message, args) => {
         let userChoice;

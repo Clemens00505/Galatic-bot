@@ -7,7 +7,7 @@ module.exports = {
     category: "Fun",
     description: "Gives the gayrate of the user !!",
     aliases: ["howgay"],
-    example: `${config.prefix}gayrate @Clemens`,
+    usage: `${config.prefix}gayrate @Clemens`,
 
     run: async (client, message, args) => {
 

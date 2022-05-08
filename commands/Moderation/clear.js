@@ -5,7 +5,7 @@ module.exports = {
     aliases: ["purge", "nuke", "clean"],
     category: "Moderation",
     description: "Clears the chat",
-    example: `${config.prefix}clear 69`,
+    usage: `${config.prefix}clear 69`,
     
     run: async (client, message, args) => {
 

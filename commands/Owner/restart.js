@@ -5,7 +5,7 @@ module.exports = {
     aliases: ["herlaad"],
     description: "restarts the bot !!",
     category: "Owner",
-    example: `${config.prefix}restart`,
+    usage: `${config.prefix}restart`,
 
     run: async(client, message, args) => {
         

@@ -7,7 +7,7 @@ module.exports = {
     aliases: ["e", "evaluate"],
     category: "Owner",
     description: "Evaluates the code you put in but it's only available for the my Developer and no one else!!!!!",
-    example: `${config.prefix}eval [js string]`,
+    usage: `${config.prefix}eval [js string]`,
 
     run: async (client, message, args) => { 
 

@@ -6,7 +6,7 @@ module.exports = {
     aliases: ["turnoff"],
     description: "Shuts down the bot !!",
     category: "Owner",
-    example: `${config.prefix}shutdown`,
+    usage: `${config.prefix}shutdown`,
 
     run: async(client, message, args) => {
 
