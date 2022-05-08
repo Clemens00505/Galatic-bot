@@ -4,7 +4,7 @@ const config = require('../../config.json');
 
 module.exports = {
     name: "botinfo",
-    category: "Info",
+    category: "info",
     aliases: ["bot", "info", "stats"],
     description: "Give the information of the bot",
     usage: `${config.prefix}botinfo`,
@@ -33,17 +33,18 @@ module.exports = {
         
         .setAuthor(client.user.tag, client.user.displayAvatarURL())
         .setTitle(`Information`)
-        .addField(`Name | ID`, `\`\`\`${client.user.tag} | ${client.user.id}\`\`\``, true)
-        .addField(`Used By`, `\`\`\`${client.guilds.cache.size} Servers\`\`\``, true)
-        .addField(`User Count`, `\`\`\`${usersCount} Users\`\`\``, true)
-        .addField(`Channel Count`, `\`\`\`${client.channels.cache.size} Channels\`\`\``, true)
-        .addField(`Made With`, `\`\`\`Discord.js & Node.js\`\`\``, true)
-        .addField(`Creation Date`, `\`\`\`${moment.utc(client.user.createdAt).format('DD/MMM/YYYY')}\`\`\``, true)
-        .addField(`Bot Ping`, `\`\`\`Latency: ${Date.now()-message.createdTimestamp} ms\nAPI Latency: ${Math.round(client.ws.ping)} ms\`\`\``, true)
-        .addField(`Command Size`, `\`\`\`${client.commands.size} Commands\n${client.aliases.size} Aliases\`\`\``, true)
-        .addField(`Prefix`, `\`\`\`${config.prefix}\`\`\``, true)
-        .addField(`Developer`, `\`\`\`${Developer.tag} | ${config.owner}\`\`\``, true)
-        .addField(`Uptime`, `\`\`\`${Uptime}\`\`\``, true)
+        .addField(`Name | ID: `, `\`\`\`${client.user.tag} | ${client.user.id}\`\`\``, true)
+        .addField(`Used By: `, `\`\`\`${client.guilds.cache.size} Servers\`\`\``, true)
+        .addField(`User Count: `, `\`\`\`${usersCount} Users\`\`\``, true)
+        .addField(`Channel Count: `, `\`\`\`${client.channels.cache.size} Channels\`\`\``, true)
+        .addField(`Made With: `, `\`\`\`Discord.js & Node.js\`\`\``, true)
+        .addField(`Creation Date: `, `\`\`\`${moment.utc(client.user.createdAt).format('DD/MMM/YYYY')}\`\`\``, true)
+        .addField(`Bot Ping: `, `\`\`\`Latency: ${Date.now()-message.createdTimestamp} ms\nAPI Latency: ${Math.round(client.ws.ping)} ms\`\`\``, true)
+        .addField(`Command Size: `, `\`\`\`${client.commands.size} Commands\n${client.aliases.size} Aliases\`\`\``, true)
+        .addField(`Prefix: `, `\`\`\`${config.prefix}\`\`\``, true)
+        .addField(`Developer: `, `\`\`\`${Developer.tag} | ${config.owner}\`\`\``, true)
+        .addField(`Uptime: `, `\`\`\`${Uptime}\`\`\``, true)
+        .addField('RAM: ',  `\`\`\`${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB\`\`\``,  true)
         .setColor(message.guild.me.displayHexColor)
         .setTimestamp()
 
